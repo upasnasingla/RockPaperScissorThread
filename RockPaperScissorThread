@@ -1,0 +1,77 @@
+package RockPaperScissor;
+import java.util.*;
+public class RockPaper {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		while(true) {
+		String rps[]= {"r","p","s","t"};
+		String computerSelection=rps[new Random().nextInt(rps.length)];
+		
+		String usermove;
+		
+		while(true) {
+			System.out.println("It is your turn to select(r,p,s,t)");
+			usermove=sc.nextLine();
+			if(usermove.equals("r")|| usermove.equals("p")||usermove.equals("s")||usermove.equals("t")) {
+				break;
+			}
+			System.out.println("Please enter a valid selection");
+		}
+		
+		 System.out.println("Computer played: "+computerSelection);
+		 if(usermove.equals(computerSelection)) {
+			 System.out.println("It was a tie");
+		 }
+		 else if(usermove.equals("r")){
+			 if(computerSelection.equals("p")||(computerSelection.equals("t"))) {
+				 System.out.println("You loose");
+			 }
+			 else if(computerSelection.equals("s")) {
+				 System.out.println("You win");
+			 }
+			 
+			 
+		 }
+		 
+		 else if(usermove.equals("p")){
+			 if(computerSelection.equals("s")||(computerSelection.equals("t"))) {
+				 System.out.println("You loose");
+			 }
+			 else if(computerSelection.equals("r")) {
+				 System.out.println("You win");
+			 }
+			 
+			 
+		 }
+		 
+		 else if(usermove.equals("s")){
+			 if(computerSelection.equals("p")||(computerSelection.equals("t"))) {
+				 System.out.println("You win");
+			 }
+			 else if(computerSelection.equals("r")) {
+				 System.out.println("You loose");
+			 }
+			 
+			 
+		 }
+		 
+		 else {      // thread
+			 if(computerSelection.equals("r")||(computerSelection.equals("p"))) {
+				 System.out.println("You win");
+			 }
+			 else if(computerSelection.equals("s")) {
+				 System.out.println("You loose");
+			 }
+			 
+			 
+		 }
+	     System.out.println("Do you want to play or not?yes/no");
+	     String ans=sc.nextLine();
+	     if(ans.equals("no")) {
+	    	 break;
+	     }
+	}
+	}
+    
+}
